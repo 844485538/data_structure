@@ -96,6 +96,7 @@ public class SingleLinked {
 		Node node = this.getNode(index);
 		Node AfterNode = this.getNode(index + 1);
 		beforeNode.setNext(AfterNode);
+		this.size--;
 		return node;
 	}
 
