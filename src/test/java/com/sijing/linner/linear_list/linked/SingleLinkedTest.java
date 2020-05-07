@@ -2,18 +2,15 @@ package com.sijing.linner.linear_list.linked;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import com.sijing.linear.linear_list.linked.SingleLinked;
-
-/**
- * 各个@Test方法对全局变量的修改作用范围只在本@Test方法内 
- * @author li
- *
- */
 
 // 指定@Test方法按按字母排序
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -23,7 +20,7 @@ public class SingleLinkedTest {
 	SingleLinked singleLinked;
 	
 	/**
-	 * 构建一个包含100个元素的单链表
+	 * 每个@Test方法执行前都构建一个包含20个元素的单链表
 	 */
 	@Before
 	public void before() {
