@@ -1,13 +1,15 @@
 package com.sijing.linear.linear_list.linked;
 
+import com.sijing.entity.BothwayLinkedNode;
+
 public class BothwayLinked {
 
-	private Node head;
+	private BothwayLinkedNode head;
 
 	private int size;
 
 	public BothwayLinked(int data){
-		this.head = new Node(data);
+		this.head = new BothwayLinkedNode(data);
 		this.size++;
 	}
 
@@ -20,12 +22,12 @@ public class BothwayLinked {
 		return this.getNode(index).getData();
 	}
 
-	private Node getNode(int index){
+	private BothwayLinkedNode getNode(int index){
 		// 判断索引是否超出范围
 		if (index < 0 || index > this.size) {
 			throw new IndexOutOfBoundsException("索引超出范围");
 		}
-		Node node = this.head;
+		BothwayLinkedNode node = this.head;
 		for (int i = 1; i <= index; i++){
 			node = node.getNextNode();
 		}
@@ -37,7 +39,7 @@ public class BothwayLinked {
 	 * @param data
 	 */
 	public void headInsert(int data){
-		Node node = new Node(data);
+		BothwayLinkedNode node = new BothwayLinkedNode(data);
 		node.setNextNode(this.head);
 		this.head = node;
 		this.size++;
@@ -48,8 +50,8 @@ public class BothwayLinked {
 	 * @param data
 	 */
 	public void tailInsert(int data){
-		Node node = new Node(data);
-		Node lastNode = this.getNode(this.size - 1);
+		BothwayLinkedNode node = new BothwayLinkedNode(data);
+		BothwayLinkedNode lastNode = this.getNode(this.size - 1);
 		lastNode.setNextNode(node);
 		node.setPreviousNode(lastNode);
 		this.size++;
@@ -77,7 +79,7 @@ public class BothwayLinked {
 		if (index < 0 || index > this.size) {
 			throw new IndexOutOfBoundsException("索引超出范围");
 		}
-		Node previousNode = this.getNode(index - 1);
+		BothwayLinkedNode previousNode = this.getNode(index - 1);
 		if (index == (this.size - 1)) {
 			previousNode.setNextNode(null);
 		} else {
@@ -97,46 +99,6 @@ public class BothwayLinked {
 		sb.deleteCharAt(sb.length() - 1);
 		sb.append("]");
 		return sb.toString();
-	}
-
-	class Node {
-
-		private int data;
-		private Node previousNode;
-		private Node nextNode;
-
-		public Node(int data){
-			this.data = data;
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public Node getPreviousNode() {
-			return previousNode;
-		}
-
-		public void setPreviousNode(Node previousNode) {
-			this.previousNode = previousNode;
-		}
-
-		public Node getNextNode() {
-			return nextNode;
-		}
-
-		public void setNextNode(Node nextNode) {
-			this.nextNode = nextNode;
-		}
-
-		@Override
-		public String toString() {
-			return "Node [data=" + data + "]";
-		}
 	}
 
 }

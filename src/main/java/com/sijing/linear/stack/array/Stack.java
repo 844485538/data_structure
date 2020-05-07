@@ -3,13 +3,13 @@ package com.sijing.linear.stack.array;
  * 栈
  *  数组实现
  */
-public class StackByArray {
+public class Stack {
 
     private int[] data;
 
     private int size;
 
-    public StackByArray (int capacity){
+    public Stack (int capacity){
         this.data = new int[capacity];
         this.size = 0;
     }
