@@ -29,7 +29,9 @@ public class Stack {
 			this.tail = node;
 			this.size++;
 		} else {
-			this.tail.setNextNode(node);
+			BothwayLinkedNode lastNode = this.tail;
+			lastNode.setNextNode(node);
+			node.setPreviousNode(lastNode);
 			this.tail = node;
 			this.size++;
 		}
@@ -40,7 +42,7 @@ public class Stack {
 			throw new IndexOutOfBoundsException("Do not have any element");
 		}
 		BothwayLinkedNode node = this.tail;
-		this.tail = this.tail.getPreviousNode() == this.head ? null : this.tail.getPreviousNode();
+		this.tail = this.tail.getPreviousNode();
 		this.size--;
 		return node.getData();
 	}

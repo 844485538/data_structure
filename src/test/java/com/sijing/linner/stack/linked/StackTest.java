@@ -2,7 +2,6 @@ package com.sijing.linner.stack.linked;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import com.sijing.linear.stack.linked.Stack;
