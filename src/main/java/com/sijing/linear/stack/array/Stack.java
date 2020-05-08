@@ -19,9 +19,9 @@ public class Stack {
      * @param data 元素
      * @throws Exception 栈满后添加元素报错
      */
-    public void push(int element) throws Exception {
+    public void push(int element){
         if (size == this.data.length) {
-            throw new Exception("Stack is full");
+            throw new IndexOutOfBoundsException("Stack is full");
         }
         this.data[size] = element;
         this.size++;
@@ -32,9 +32,9 @@ public class Stack {
      * @return 元素
      * @throws Exception
      */
-    public int pull() throws Exception {
+    public int pull() {
         if (size == 0) {
-            throw new Exception("any have element");
+            throw new IndexOutOfBoundsException("any have element");
         }
         int element = this.data[size - 1];
         this.size--;

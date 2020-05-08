@@ -3,12 +3,13 @@ package com.sijing.linear.stack.linked;
 import com.sijing.entity.BothwayLinkedNode;
 
 /**
- * 测试未捅过
+ * 双向链表实现 栈
  * @author farbun
  *
  */
 public class Stack {
 	
+	@SuppressWarnings("unused")
 	private BothwayLinkedNode head;
 	
 	private BothwayLinkedNode tail;
